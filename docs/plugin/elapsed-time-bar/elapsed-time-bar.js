@@ -47,25 +47,17 @@ var ElapsedTimeBar = {
     // create container of time-progress
     var timeProgressContainer = document.createElement('div');
     timeProgressContainer.classList.add('progress');
-    Object.entries({
-      display: 'block',
-      position: 'fixed',
-      bottom: config.progress ? barHeight : 0,
-      width: '100%',
-      height: barHeight
-    }).forEach(([k, v]) => {
-      timeProgressContainer.style[k] = v;
-    });
+    timeProgressContainer.style.display = 'block';
+    timeProgressContainer.style.position = 'fixed';
+    timeProgressContainer.style.bottom = config.progress ? barHeight : 0;
+    timeProgressContainer.style.width = '100%';
+    timeProgressContainer.style.height = barHeight;
     document.querySelector('.reveal').appendChild(timeProgressContainer);
 
     // create content of time-progress
     this.timeProgressBar = document.createElement('div');
-    Object.entries({
-      height: '100%',
-      willChange: 'width'
-    }).forEach(([k, v]) => {
-      this.timeProgressBar.style[k] = v;
-    });
+    this.timeProgressBar.style.height = '100%';
+    this.timeProgressBar.style.willChange = 'width';
     timeProgressContainer.appendChild(this.timeProgressBar);
 
     // start timer
