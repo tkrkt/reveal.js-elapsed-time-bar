@@ -68,8 +68,13 @@ var ElapsedTimeBar = {
     });
     timeProgressContainer.appendChild(this.timeProgressBar);
 
-    // start timer
-    this.start(config.allottedTime);
+      if (config.progressDelayedStart) {
+          this.isPaused = true;
+      } else {
+          // start timer
+          this.start(config.allottedTime);
+      }
+
   },
 
   /**
