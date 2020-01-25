@@ -41,6 +41,9 @@ Reveal.initialize({
   // - (optional) height of page/time progress bar
   progressBarHeight: 3,
 
+  // - (optional) position time progress bar ('top' or 'bottom')
+  progressBarPosition: 'top',
+
   // - (optional) bar color
   barColor: 'rgb(200,0,0)',
 

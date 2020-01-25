@@ -47,13 +47,15 @@ var ElapsedTimeBar = {
     // create container of time-progress
     var timeProgressContainer = document.createElement('div');
     timeProgressContainer.classList.add('progress');
-    Object.entries({
+    var stylingProperties = {
       display: 'block',
       position: 'fixed',
-      bottom: config.progress ? barHeight : 0,
       width: '100%',
       height: barHeight
-    }).forEach(([k, v]) => {
+    };
+    var progressBarPosition = config.progressBarPosition === 'top' ? 'top' : 'bottom';
+    stylingProperties[progressBarPosition] = config.progress ? barHeight : 0;
+    Object.entries(stylingProperties).forEach(([k, v]) => {
       timeProgressContainer.style[k] = v;
     });
     document.querySelector('.reveal').appendChild(timeProgressContainer);
