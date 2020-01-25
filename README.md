@@ -46,6 +46,9 @@ Reveal.initialize({
 
   // - (optional) bar color when timer is paused
   pausedBarColor: 'rgba(200,0,0,.6)',
+
+  // - (optional) don't start timer automatically
+  progressDelayedStart: false,
 });
 ```
 
